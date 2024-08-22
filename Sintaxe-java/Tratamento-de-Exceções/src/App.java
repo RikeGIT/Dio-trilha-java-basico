@@ -3,6 +3,7 @@ import java.util.Locale;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        try{
         Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
         System.out.println("Digite seu nome");
@@ -20,5 +21,8 @@ public class App {
         System.out.println("Olá me chamo " + nome.toUpperCase());
         System.out.println("tenho " + idade + " anos");
         System.out.println("e minha altura é " + altura);
+        }catch(java.util.InputMismatchException e){
+            System.out.println("ERROR: Os campos idade e altura precisam ser númericos");
+        }
     }
 }
